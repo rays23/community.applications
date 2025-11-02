@@ -10,7 +10,6 @@
   <Support>https://github.com/rays23/unraid-kaspa-node</Support>
   <Project>https://github.com/kaspanet/rusty-kaspa</Project>
   <Overview>Unraid Docker Template für den offiziellen Kaspa Rust Node. Kaspa ist ein High-Performance Blockgraph-basiertes Kryptowährungs-Protokoll mit extrem schnellen Blockzeiten und hohem Durchsatz.
-
   Features:
   - Offizielle kaspad Implementation in Rust
   - Persistente Speicherung der Blockchain-Daten
@@ -33,15 +32,15 @@
   <Category>Crypto: Status:Stable</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/rays23/unraid-kaspa-node/main/kaspa-node.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/rays23/unraid-kaspa-node/main/kaspa-logo.png</Icon>
+  <Icon>https://raw.githubusercontent.com/rays23/community.applications/master/webImages/kaspa-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
   <DateInstalled/>
   <DonateText/>
   <DonateLink/>
+  <DonateImg/>
   <Description>Unraid Docker Template für den offiziellen Kaspa Rust Node. Kaspa ist ein High-Performance Blockgraph-basiertes Kryptowährungs-Protokoll mit extrem schnellen Blockzeiten und hohem Durchsatz.
-
   Features:
   - Offizielle kaspad Implementation in Rust
   - Persistente Speicherung der Blockchain-Daten
