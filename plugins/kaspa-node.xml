@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>kaspa-node</Name>
+  <Repository>kaspanet/kaspad:latest</Repository>
+  <Registry>https://hub.docker.com/r/kaspanet/kaspad</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/rays23/unraid-kaspa-node</Support>
+  <Project>https://github.com/kaspanet/rusty-kaspa</Project>
+  <Overview>Unraid Docker Template für den offiziellen Kaspa Rust Node. Kaspa ist ein High-Performance Blockgraph-basiertes Kryptowährungs-Protokoll mit extrem schnellen Blockzeiten und hohem Durchsatz.
+
+  Features:
+  - Offizielle kaspad Implementation in Rust
+  - Persistente Speicherung der Blockchain-Daten
+  - Einfache Konfiguration über WebUI
+  - Automatischer Container-Restart
+  - RPC-Zugriff über Port 16110
+  - P2P-Kommunikation über Port 16111
+  
+  Quickstart:
+  1. Template installieren
+  2. Optional: DATA_PATH im Template anpassen (Standard: /mnt/user/appdata/kaspa)
+  3. Container starten
+  4. Node synchronisiert automatisch mit dem Kaspa-Netzwerk
+  5. RPC-API ist unter Port 16110 verfügbar
+  
+  Anforderungen:
+  - Mindestens 50 GB freier Speicherplatz für Blockchain-Daten (wachsend)
+  - Stabile Internetverbindung für Synchronisation
+  - Empfohlen: 4GB RAM oder mehr</Overview>
+  <Category>Crypto: Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/rays23/unraid-kaspa-node/main/kaspa-node.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/rays23/unraid-kaspa-node/main/kaspa-logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Unraid Docker Template für den offiziellen Kaspa Rust Node. Kaspa ist ein High-Performance Blockgraph-basiertes Kryptowährungs-Protokoll mit extrem schnellen Blockzeiten und hohem Durchsatz.
+
+  Features:
+  - Offizielle kaspad Implementation in Rust
+  - Persistente Speicherung der Blockchain-Daten
+  - Einfache Konfiguration über WebUI
+  - Automatischer Container-Restart
+  - RPC-Zugriff über Port 16110
+  - P2P-Kommunikation über Port 16111
+  
+  Quickstart:
+  1. Template installieren
+  2. Optional: DATA_PATH im Template anpassen (Standard: /mnt/user/appdata/kaspa)
+  3. Container starten
+  4. Node synchronisiert automatisch mit dem Kaspa-Netzwerk
+  5. RPC-API ist unter Port 16110 verfügbar
+  
+  Anforderungen:
+  - Mindestens 50 GB freier Speicherplatz für Blockchain-Daten (wachsend)
+  - Stabile Internetverbindung für Synchronisation
+  - Empfohlen: 4GB RAM oder mehr</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>16110</HostPort>
+        <ContainerPort>16110</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>16111</HostPort>
+        <ContainerPort>16111</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/kaspa</HostDir>
+      <ContainerDir>/app/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>--utxoindex</Value>
+      <Name>KASPAD_ARGS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="RPC Port" Target="16110" Default="16110" Mode="tcp" Description="RPC-Port für API-Zugriff" Type="Port" Display="always" Required="true" Mask="false">16110</Config>
+  <Config Name="P2P Port" Target="16111" Default="16111" Mode="tcp" Description="P2P-Port für Netzwerk-Kommunikation" Type="Port" Display="always" Required="true" Mask="false">16111</Config>
+  <Config Name="Data Directory" Target="/app/data" Default="/mnt/user/appdata/kaspa" Mode="rw" Description="Speicherort für Blockchain-Daten" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/kaspa</Config>
+  <Config Name="Kaspad Arguments" Target="KASPAD_ARGS" Default="--utxoindex" Mode="" Description="Kommandozeilen-Argumente für kaspad (z.B. --utxoindex für UTXO-Indexierung)" Type="Variable" Display="always" Required="false" Mask="false">--utxoindex</Config>
+</Container>
